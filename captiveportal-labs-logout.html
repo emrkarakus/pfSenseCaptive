@@ -1,0 +1,71 @@
+<html>
+<head><title>Untitled</title></head>
+<body>
+<script language="JavaScript">
+<!--
+LogoutWin = window.open('', 'Logout', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=256,height=64');
+if (LogoutWin) {
+        LogoutWin.document.write('<HTML>');
+        LogoutWin.document.write('<HEAD><TITLE>Cikis</TITLE>') ;
+        LogoutWin.document.write('<SCRIPT type="text/javascript">');
+        LogoutWin.document.write('function getXMLObject()  ');
+        LogoutWin.document.write('{');
+        LogoutWin.document.write('   var xmlHttp = false;');
+        LogoutWin.document.write('   try {');
+        LogoutWin.document.write('     xmlHttp = new ActiveXObject("Msxml2.XMLHTTP")  ');
+        LogoutWin.document.write('   }');
+        LogoutWin.document.write('   catch (e) {');
+        LogoutWin.document.write('     try {');
+        LogoutWin.document.write('       xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")  ');
+        LogoutWin.document.write('     }');
+        LogoutWin.document.write('     catch (e2) {');
+        LogoutWin.document.write('       xmlHttp = false   ');
+        LogoutWin.document.write('     }');
+        LogoutWin.document.write('   }');
+        LogoutWin.document.write('   if (!xmlHttp && typeof XMLHttpRequest != "undefined") {');
+        LogoutWin.document.write('     xmlHttp = new XMLHttpRequest();        ');
+        LogoutWin.document.write('   }');
+        LogoutWin.document.write('   return xmlHttp;  ');
+        LogoutWin.document.write('} ');
+        LogoutWin.document.write('var xmlhttp = new getXMLObject(); ');
+        LogoutWin.document.write('function ajaxFunction() {');
+        LogoutWin.document.write('  var getdate = new Date();  ');
+        LogoutWin.document.write('  if(xmlhttp) {');
+        LogoutWin.document.write('    var txtname = "<?=$sessionid;?>";');
+        LogoutWin.document.write('    xmlhttp.open("POST","<?=$logouturl;?>",true);');
+        LogoutWin.document.write('    xmlhttp.onreadystatechange  = handleServerResponse;');
+        LogoutWin.document.write('    xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");');
+        LogoutWin.document.write('    xmlhttp.send("abc=" + txtname); ');
+        LogoutWin.document.write('  }');
+        LogoutWin.document.write('basla();');
+        LogoutWin.document.write('}');
+        LogoutWin.document.write('function handleServerResponse() {');
+        LogoutWin.document.write('   if (xmlhttp.readyState == 4) {');
+        LogoutWin.document.write('     if(xmlhttp.status != 200) {');
+        LogoutWin.document.write('        alert("Error during AJAX call. Please try again");');
+        LogoutWin.document.write('     }');
+        LogoutWin.document.write('   }');
+        LogoutWin.document.write('}');
+        LogoutWin.document.write('function basla() {');
+        LogoutWin.document.write('setTimeout("ajaxFunction()",20000);');
+        LogoutWin.document.write('}');
+        LogoutWin.document.write('<\/SCRIPT>');
+        LogoutWin.document.write('</HEAD>');
+        LogoutWin.document.write('<BODY  onload=\'setTimeout("ajaxFunction(),20000");\' BGCOLOR="#435370">');
+        LogoutWin.document.write('<DIV ALIGN="center" STYLE="color: #ffffff; font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; font-size: 11px;">') ;
+        LogoutWin.document.write('<b>Cikis Yapmak icin Tiklayiniz</b><p />');
+        LogoutWin.document.write('<FORM METHOD="POST" ACTION="<?=$logouturl;?>">'); 
+        LogoutWin.document.write('<INPUT NAME="logout_id" TYPE="hidden" VALUE="<?=$sessionid;?>" />');
+        LogoutWin.document.write('<input name="zone" type="hidden" value="<?=$cpzone;?>" />');
+        LogoutWin.document.write('<INPUT NAME="logout" TYPE="submit" VALUE="Logout" />');
+        LogoutWin.document.write('</FORM>');
+        LogoutWin.document.write('</DIV></BODY>');
+        LogoutWin.document.write('</HTML>');
+        LogoutWin.document.close();
+}
+
+document.location.href="<?=$my_redirurl;?>";
+-->
+</script>
+</body>
+</html>
