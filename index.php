@@ -42,9 +42,9 @@ header("Connection: close");
 
 
 if ($_POST['abc']){
-	$GET_ID = escapeshellarg($_POST['a']);
-    $GET_ID = str_replace("'","",$GET_ID);
-    $GET_ID = str_replace("%27","",$GET_ID);
+	$GET_ID = escapeshellarg($_POST['abc']);
+	$GET_ID = str_replace("'","",$GET_ID);
+	$GET_ID = str_replace("%27","",$GET_ID);
 	$cpzone = "cpzone";
 	$update_time = time();
 	$databasetest = new SQLite3("/var/db/captiveportallabs.db");
