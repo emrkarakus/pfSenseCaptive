@@ -11,7 +11,6 @@ if (!empty($cpzone)) {
 $nowtime = time();
 
 foreach ($database as $user) {
-echo "{$user[16]}\n";
         if (($nowtime - intval($user[16]) ) > $range ){
                 $dbrow = $user;
                 captiveportal_disconnect_client($dbrow[5],1,"POPUP-KAPALI");
